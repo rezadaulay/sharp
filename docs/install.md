@@ -254,6 +254,20 @@ option.
 }
 ```
 
+### electron forge
+
+First you need install [plugin-auto-unpack-natives](https://www.npmjs.com/package/@electron-forge/plugin-auto-unpack-natives). Now you can make sharp unpacked from the ASAR archive file via the `forge.config` configuration.
+
+```js
+module.exports = {
+  packagerConfig: {
+    asar: {
+      unpack: '**/node_modules/sharp/**/*'
+    }
+  }
+};
+```
+
 ### vite
 
 Ensure `sharp` is excluded from bundling via the
